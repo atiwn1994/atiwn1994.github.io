@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Tiwari | Senior Data Engineer</title>
+<meta name="description" content="Aditya Tiwari - Senior Data Engineer / Senior Ab Initio Developer with 10 years of experience in banking, financial services and insurance.">
+<style>
+  :root {
+    --bg: #070b16;
+    --bg2: #0d1426;
+    --card: rgba(255,255,255,0.05);
+    --card-border: rgba(255,255,255,0.10);
+    --text: #e9edf7;
+    --muted: #9aa6c0;
+    --a1: #6c8cff;
+    --a2: #b46cff;
+    --a3: #19d3c5;
+    --glow: rgba(108,140,255,0.35);
+  }
+  [data-theme="light"] {
+    --bg: #f4f6fc;
+    --bg2: #e9eefb;
+    --card: rgba(255,255,255,0.85);
+    --card-border: rgba(40,60,120,0.12);
+    --text: #172036;
+    --muted: #55617c;
+    --a1: #3d63e8;
+    --a2: #8a3fe0;
+    --a3: #0aa89c;
+    --glow: rgba(61,99,232,0.25);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    overflow-x: hidden;
+    position: relative;
+  }
+  a { color: var(--a1); text-decoration: none; }
+
+  /* ---------- animated background ---------- */
+  .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+        background: radial-gradient(circle at 20% 0%, var(--bg2), var(--bg) 60%); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.45; animation: float 18s ease-in-out infinite; }
+  .blob.b1 { width: 420px; height: 420px; background: var(--a1); top: -120px; left: -100px; }
+  .blob.b2 { width: 380px; height: 380px; background: var(--a2); top: 35%; right: -140px; animation-delay: -6s; }
+  .blob.b3 { width: 340px; height: 340px; background: var(--a3); bottom: -120px; left: 25%; animation-delay: -11s; }
+  @keyframes float {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(40px,-30px) scale(1.08); }
+    66% { transform: translate(-30px,40px) scale(0.95); }
+  }
+  .grid-bg { position: absolute; inset: 0; opacity: 0.06;
+    background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px);
+    background-size: 44px 44px; }
+
+  /* ---------- nav ---------- */
+  nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px);
+        background: color-mix(in srgb, var(--bg) 70%, transparent);
+        border-bottom: 1px solid var(--card-border); }
+  nav .inner { max-width: 1040px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand { font-weight: 800; letter-spacing: .5px; color: var(--text);
+           background: linear-gradient(90deg, var(--a1), var(--a2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav ul { list-style: none; display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: .9rem; }
+  nav ul a { color: var(--muted); transition: color .2s; }
+  nav ul a:hover { color: var(--text); }
+  .toggle { background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: .9rem; }
+
+  /* ---------- hero ---------- */
+  .hero { max-width: 1040px; margin: 0 auto; padding: 80px 20px 40px; text-align: center; }
+  .avatar { width: 132px; height: 132px; margin: 0 auto 24px; border-radius: 50%; padding: 4px;
+            background: conic-gradient(from 0deg, var(--a1), var(--a2), var(--a3), var(--a1));
+            animation: spin 8s linear infinite; box-shadow: 0 0 40px var(--glow); }
+  .avatar span { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+                 border-radius: 50%; background: var(--bg); font-size: 2.6rem; font-weight: 800;
+                 animation: spin-rev 8s linear infinite; color: var(--text); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes spin-rev { to { transform: rotate(-360deg); } }
+  .hello { color: var(--a3); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.1; margin: 8px 0 12px; font-weight: 800;
+       background: linear-gradient(90deg, var(--a1), var(--a2) 55%, var(--a3)); -webkit-background-clip: text; background-clip: text; color: transparent;
+       background-size: 200% auto; animation: shine 6s linear infinite; }
+  @keyframes shine { to { background-position: 200% center; } }
+  .typed { font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--text); min-height: 2em; font-weight: 600; }
+  .typed::after { content: "|"; margin-left: 2px; color: var(--a3); animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .summary { max-width: 700px; margin: 16px auto 0; color: var(--muted); font-size: 1.05rem; }
+  .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: .95rem; border: 1px solid var(--card-border); color: var(--text); background: var(--card); transition: transform .2s, box-shadow .2s; }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 26px var(--glow); }
+  .btn.primary { background: linear-gradient(90deg, var(--a1), var(--a2)); color: #fff; border: none; }
+
+  /* ---------- stats ---------- */
+  .stats { max-width: 1040px; margin: 30px auto 0; padding: 0 20px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .stat { text-align: center; padding: 22px 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--card-border); backdrop-filter: blur(10px); }
+  .stat .num { font-size: 2.3rem; font-weight: 800; background: linear-gradient(90deg, var(--a1), var(--a3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat .lbl { color: var(--muted); font-size: .9rem; }
+
+  /* ---------- layout ---------- */
+  main { max-width: 1040px; margin: 0 auto; padding: 0 20px 40px; }
+  section { padding: 64px 0 0; }
+  .sec-title { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .sec-title .ic { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+                   background: linear-gradient(135deg, var(--a1), var(--a2)); box-shadow: 0 6px 20px var(--glow); }
+  .sec-title h2 { font-size: 1.7rem; }
+  .sec-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--card-border), transparent); }
+
+  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px; backdrop-filter: blur(10px);
+          transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px var(--glow); border-color: var(--a1); }
+  .card h3 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+  p + p { margin-top: 12px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { padding: 5px 13px; border-radius: 999px; font-size: .85rem; font-weight: 500; color: var(--text);
+         background: linear-gradient(135deg, color-mix(in srgb, var(--a1) 22%, transparent), color-mix(in srgb, var(--a2) 22%, transparent));
+         border: 1px solid var(--card-border); transition: transform .2s; }
+  .tag:hover { transform: scale(1.08); }
+  ul.plain { padding-left: 20px; color: var(--muted); }
+  ul.plain li { margin-bottom: 8px; }
+  ul.plain li::marker { color: var(--a3); }
+
+  /* ---------- timeline ---------- */
+  .timeline { position: relative; padding-left: 34px; }
+  .timeline::before { content: ""; position: absolute; left: 11px; top: 6px; bottom: 6px; width: 3px; border-radius: 3px;
+                      background: linear-gradient(180deg, var(--a1), var(--a2), var(--a3)); }
+  .job { position: relative; margin-bottom: 24px; }
+  .job::before { content: ""; position: absolute; left: -32px; top: 28px; width: 17px; height: 17px; border-radius: 50%;
+                 background: var(--bg); border: 3px solid var(--a3); box-shadow: 0 0 14px var(--a3); }
+  .job .head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 14px; align-items: baseline; }
+  .job .title { font-size: 1.15rem; font-weight: 700; }
+  .job .date { font-size: .8rem; padding: 3px 12px; border-radius: 999px; color: var(--a3); border: 1px solid var(--a3); white-space: nowrap; }
+  .job .org { color: var(--a1); font-weight: 600; margin-top: 2px; }
+  .job .project { color: var(--muted); font-size: .92rem; margin: 2px 0 12px; font-style: italic; }
+  .job ul { padding-left: 20px; color: var(--muted); }
+  .job li { margin-bottom: 8px; }
+  .job li::marker { color: var(--a2); }
+  .now { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #3ddc84; margin-right: 6px; box-shadow: 0 0 0 0 rgba(61,220,132,.7); animation: pulse 1.8s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
+
+  /* ---------- certs ---------- */
+  .cert { display: flex; align-items: center; gap: 14px; }
+  .cert .badge { flex: none; width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+                 background: linear-gradient(135deg, var(--a1), var(--a3)); }
+
+  /* ---------- education ---------- */
+  .edu-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; }
+  .edu .date { color: var(--muted); font-size: .85rem; }
+  .bar { height: 8px; border-radius: 8px; background: var(--card-border); margin-top: 12px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 8px; background: linear-gradient(90deg, var(--a1), var(--a3)); transition: width 1.4s ease; }
+  .pct { text-align: right; font-size: .85rem; color: var(--a3); font-weight: 700; margin-top: 4px; }
+
+  /* ---------- contact / footer ---------- */
+  .contact-card { text-align: center; padding: 40px 24px; }
+  .contact-card h3 { justify-content: center; font-size: 1.4rem; }
+  .contact-card p { color: var(--muted); }
+  footer { text-align: center; color: var(--muted); font-size: .88rem; padding: 40px 20px 50px; }
+
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"><div class="grid-bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#top">AT.</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle" id="themeBtn" aria-label="Toggle theme">☀️ Light</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="avatar"><span>AT</span></div>
+  <div class="hello">Hello, I'm</div>
+  <h1>Aditya Tiwari</h1>
+  <div class="typed" id="typed"></div>
+  <p class="summary">
+    10 years of experience in the Data Engineering space across Banking, Financial Services and Insurance.
+    Currently working with a banking client on large-scale payment data pipelines.
+  </p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:atiwn050194@gmail.com">✉️ Email me</a>
+    <a class="btn" href="tel:+918308988815">📞 +91-8308988815</a>
+    <a class="btn" href="#experience">View experience</a>
+  </div>
+</header>
+
+<div class="stats reveal">
+  <div class="stat"><div class="num" data-count="10" data-suffix="+">0</div><div class="lbl">Years of experience</div></div>
+  <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Companies</div></div>
+  <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Engineers led</div></div>
+  <div class="stat"><div class="num" data-count="5">0</div><div class="lbl">Certifications</div></div>
+</div>
+
+<main>
+
+  <section id="about" class="reveal">
+    <div class="sec-title"><div class="ic">👤</div><h2>About</h2></div>
+    <div class="card">
+      <p>
+        I am currently looking for a position as a Senior Data Engineer that enhances my working capacities,
+        professional skills and business efficiencies, and allows me to serve an organization in the best possible
+        way with sheer determination and commitment.
+      </p>
+      <p>
+        I have 10 years of experience in the Data Engineering space, with good knowledge of tools like Ab Initio,
+        databases, data warehousing concepts, AWS, Kafka, web services, Hadoop, Oracle GoldenGate and more.
+      </p>
+      <p>
+        I am currently working with a banking client and have worked on projects like RFT (Risk, Finance and Treasury)
+        and BPAID (Barclays Payment systems and different currency systems such as EUR/SWIFT/GBP/FPS/BACS).
+        I am able to handle technical complexities while implementing business transformation rules and
+        maintaining all data integrity.
+      </p>
+      <p style="margin-top:18px"><strong>Domain:</strong></p>
+      <div class="tags" style="margin-top:8px">
+        <span class="tag">🏦 Banking</span><span class="tag">💳 Financial Services</span><span class="tag">🛡️ Insurance</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="sec-title"><div class="ic">🛠️</div><h2>Skills</h2></div>
+    <div class="grid">
+      <div class="card"><h3>⚙️ ETL / ELT Tools</h3>
+        <div class="tags"><span class="tag">Ab Initio</span></div></div>
+      <div class="card"><h3>☁️ Cloud Platforms</h3>
+        <div class="tags"><span class="tag">AWS (Certified)</span></div></div>
+      <div class="card"><h3>⏱️ Scheduling Tool</h3>
+        <div class="tags"><span class="tag">TWS (Tivoli Workload Scheduler)</span></div></div>
+      <div class="card"><h3>💻 Languages</h3>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Unix Shell Scripting</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">ML</span></div></div>
+      <div class="card"><h3>🗄️ Databases &amp; DWH</h3>
+        <div class="tags"><span class="tag">Teradata</span><span class="tag">Oracle</span><span class="tag">MongoDB</span><span class="tag">SQL Server</span></div></div>
+      <div class="card"><h3>🌊 Big Data &amp; Streaming</h3>
+        <div class="tags"><span class="tag">Kafka</span><span class="tag">Hadoop</span><span class="tag">Hive</span><span class="tag">HBase</span></div></div>
+      <div class="card"><h3>🧰 External Tools</h3>
+        <div class="tags"><span class="tag">JIRA</span><span class="tag">Confluence</span><span class="tag">Service Now</span><span class="tag">SSL &amp; SASL configuration (upstream/downstream)</span></div></div>
+      <div class="card"><h3>📊 Core Competencies</h3>
+        <div class="tags"><span class="tag">Data Modeling</span><span class="tag">Data Warehousing</span><span class="tag">Data Pipelines</span><span class="tag">Data Engineering</span><span class="tag">Data Analytics</span><span class="tag">Performance Tuning</span><span class="tag">Regression Testing</span><span class="tag">Data Structures</span></div></div>
+      <div class="card"><h3>🔗 Platforms &amp; Specialties</h3>
+        <div class="tags"><span class="tag">Oracle GoldenGate</span><span class="tag">HDFS</span><span class="tag">Parallelism POCs</span><span class="tag">Metadata Programming</span><span class="tag">PDL</span><span class="tag">Metadata Hub</span><span class="tag">Data Lineage</span><span class="tag">Data Associations</span><span class="tag">Conduct&gt;IT</span></div></div>
+      <div class="card"><h3>🧪 Proof of Concepts</h3>
+        <div class="tags"><span class="tag">AWS S3</span><span class="tag">Snowflake</span></div></div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>🎯 Functional</h3>
+      <ul class="plain">
+        <li>Good knowledge of the banking domain; part of all PI Planning meetings for insight behind the technical development.</li>
+        <li>Hands-on expertise in the Software Development Life Cycle.</li>
+        <li>Designing, developing, testing, troubleshooting and debugging ETL applications in projects.</li>
+        <li>Providing post-implementation, application enhancement and maintenance support to clients for software products.</li>
+        <li>Managing and providing technical guidance and support to the project team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="sec-title"><div class="ic">💼</div><h2>Experience</h2></div>
+    <div class="timeline">
+
+      <div class="job card">
+        <div class="head"><div class="title">Technical Lead, Data Engineer</div><div class="date"><span class="now"></span>Sept 2025 – Present</div></div>
+        <div class="org">Wipro Technologies Limited, India</div>
+        <div class="project">Project: Payment Data Integration &amp; Reconciliation System</div>
+        <ul>
+          <li>Spearheaded a team of 6 data engineers in building end-to-end ETL/ELT pipelines using Kafka.</li>
+          <li>Developed custom Ab Initio components for data cleansing, enrichment and transformation, ensuring end-to-end data lineage and auditability.</li>
+          <li>Built robust ETL workflows for integrating payment data from various sources including SWIFT, CHAPS, SEPA and internal banking systems.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head"><div class="title">Senior Data Engineer</div><div class="date">Mar 2020 – Sept 2025</div></div>
+        <div class="org">IBM Pvt Ltd, United Kingdom / India</div>
+        <div class="project">Project: Banking BPAID Cards and Payments</div>
+        <ul>
+          <li>BPAID scope covers card scheme, merchant and acquirer. All payment-related information related to merchants is calculated and analyzed.</li>
+          <li>ETL receives several files for any corporate solution based on its unique service code, and processes them through validations, rejects, transformations and loading of data into databases.</li>
+          <li>ANP (Acquire and Publish), Reconciliation, MFT, data lineage and validation, and partitioning of data for optimized results.</li>
+          <li>Attended meetings with source teams for requirement details; developed and created generic graphs for different requirements.</li>
+          <li>Created plans, generic graphs and psets as part of automation; handled onsite-offshore coordination and trained new resources.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head"><div class="title">Data Engineer</div><div class="date">Jun 2018 – Mar 2020</div></div>
+        <div class="org">Capgemini Pvt Ltd, India</div>
+        <div class="project">Project: Banking Risk, Finance and Treasury</div>
+        <ul>
+          <li>Third Party Data Hub is all about external data sources. The stream focused on exploiting the Third Party Data Hub for new use cases, including engagement with product councils to understand demand and ideating new product propositions.</li>
+          <li>Developed and created generic graphs for different requirements, with effective documentation on Confluence pages.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head"><div class="title">Software Engineer</div><div class="date">Oct 2015 – Jun 2018</div></div>
+        <div class="org">ATOS / Syntel Private Limited, India</div>
+        <div class="project">Project: Insurance Policy Information Management</div>
+        <ul>
+          <li>Implemented a single, consolidated view of policy data from across Policy Administration systems (the Policy PIM), covering all policy data across the enterprise: all brands (Allstate, Commercial and Northlight), all channels and all products.</li>
+          <li>Implemented automation utilities for the client and Production Support team using SQL commands, shell scripting and HTML.</li>
+          <li>PIM projects, based on Agile methodology, form an ETL platform to process compensation claims and premiums for US policy holders irrespective of country of residence. The initiative replicates the mainframe EDWETL system with newer technology that is more scalable, manageable and cost effective. Worked in sprints.</li>
+          <li>Worked on incidents and problem tickets for project-related issues, enhancing the existing system with modified approaches.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="certifications" class="reveal">
+    <div class="sec-title"><div class="ic">🏆</div><h2>Certifications</h2></div>
+    <div class="grid">
+      <div class="card cert"><div class="badge">☁️</div><div>AWS Cloud Practitioner certified</div></div>
+      <div class="card cert"><div class="badge">📈</div><div>AMCAT certified Data Processing Specialist</div></div>
+      <div class="card cert"><div class="badge">🔐</div><div>EME Data Protection certified by IBM</div></div>
+      <div class="card cert"><div class="badge">💻</div><div>C and C++ certified</div></div>
+      <div class="card cert"><div class="badge">🛡️</div><div>Fraud Prevention and Awareness, conducted by IBM, plus multiple organization-level certificates</div></div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="sec-title"><div class="ic">🎓</div><h2>Education</h2></div>
+    <div class="grid edu">
+      <div class="card">
+        <div class="edu-top"><strong>Bachelor of Engineering</strong><span class="date">Jul 2011 – May 2015</span></div>
+        <div style="color:var(--muted)">Oriental College, Bhopal, India</div>
+        <div class="bar"><i data-w="75"></i></div><div class="pct">75%</div>
+      </div>
+      <div class="card">
+        <div class="edu-top"><strong>12th CBSE</strong><span class="date">Jun 2010 – May 2011</span></div>
+        <div style="color:var(--muted)">Kendriya Vidyalaya, Bhopal, India</div>
+        <div class="bar"><i data-w="68"></i></div><div class="pct">68%</div>
+      </div>
+      <div class="card">
+        <div class="edu-top"><strong>10th CBSE</strong><span class="date">Jun 2008 – May 2009</span></div>
+        <div style="color:var(--muted)">Kendriya Vidyalaya, Bhopal, India</div>
+        <div class="bar"><i data-w="80"></i></div><div class="pct">80%</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="sec-title"><div class="ic">📬</div><h2>Contact</h2></div>
+    <div class="card contact-card">
+      <h3>Let's work together</h3>
+      <p>Open to Senior Data Engineer opportunities.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:atiwn050194@gmail.com">✉️ atiwn050194@gmail.com</a>
+        <a class="btn" href="tel:+918308988815">📞 +91-8308988815</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© <span id="yr">2026</span> Aditya Tiwari · Built with HTML &amp; CSS</footer>
+
+<script>
+  // year
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // theme toggle (remembered when storage is available)
+  var root = document.documentElement, btn = document.getElementById("themeBtn");
+  function setTheme(t) {
+    root.setAttribute("data-theme", t);
+    btn.textContent = t === "dark" ? "☀️ Light" : "🌙 Dark";
+    try { localStorage.setItem("theme", t); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved) setTheme(saved);
+  btn.addEventListener("click", function () {
+    setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+
+  // typing effect
+  var roles = ["Senior Data Engineer", "Senior Ab Initio Developer", "Kafka & AWS Pipelines", "Banking & Payments Data Specialist"];
+  var el = document.getElementById("typed"), ri = 0, ci = 0, del = false;
+  function type() {
+    var word = roles[ri];
+    el.textContent = word.substring(0, ci);
+    if (!del && ci < word.length) { ci++; setTimeout(type, 70); }
+    else if (!del) { del = true; setTimeout(type, 1500); }
+    else if (ci > 0) { ci--; setTimeout(type, 35); }
+    else { del = false; ri = (ri + 1) % roles.length; setTimeout(type, 300); }
+  }
+  type();
+
+  // count-up numbers
+  function countUp(n) {
+    var target = +n.dataset.count, suf = n.dataset.suffix || "", cur = 0;
+    var step = Math.max(1, Math.round(target / 30));
+    var t = setInterval(function () {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(t); }
+      n.textContent = cur + suf;
+    }, 50);
+  }
+
+  // reveal on scroll
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("show");
+      e.target.querySelectorAll("[data-count]").forEach(countUp);
+      e.target.querySelectorAll("[data-w]").forEach(function (b) { b.style.width = b.dataset.w + "%"; });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function (r) { io.observe(r); });
+</script>
+</body>
+</html>
