@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Tiwari | Senior Data Engineer</title>
+<meta name="description" content="Aditya Tiwari - Senior Data Engineer / Senior Ab Initio Developer with 10 years of experience in banking, financial services and insurance.">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --text: #1c2330;
+    --muted: #5b6577;
+    --accent: #2457d6;
+    --accent-soft: #e7eeff;
+    --border: #e1e5ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1420;
+      --surface: #171e2d;
+      --text: #e8ecf4;
+      --muted: #9aa5ba;
+      --accent: #7ea2ff;
+      --accent-soft: #1f2b4a;
+      --border: #28324a;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 980px; margin: 0 auto; padding: 14px 20px;
+    display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; justify-content: space-between;
+  }
+  nav .brand { font-weight: 700; color: var(--text); }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.92rem; }
+
+  header.hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .inner { max-width: 980px; margin: 0 auto; padding: 64px 20px 56px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+  .hero .role { color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-top: 8px; }
+  .hero .summary { max-width: 720px; margin-top: 18px; color: var(--muted); font-size: 1.05rem; }
+  .contact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 8px;
+    border: 1px solid var(--accent); font-weight: 600; font-size: 0.95rem;
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn.primary:hover { text-decoration: none; opacity: 0.9; }
+  .btn.ghost { color: var(--accent); }
+
+  main { max-width: 980px; margin: 0 auto; padding: 0 20px 40px; }
+  section { padding: 48px 0 8px; }
+  h2 {
+    font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent); display: inline-block;
+  }
+  h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  p + p { margin-top: 12px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    background: var(--accent-soft); color: var(--accent);
+    padding: 4px 12px; border-radius: 999px; font-size: 0.88rem; font-weight: 500;
+  }
+
+  ul.plain { padding-left: 20px; }
+  ul.plain li { margin-bottom: 8px; }
+
+  .timeline { position: relative; padding-left: 26px; border-left: 2px solid var(--border); }
+  .job { position: relative; margin-bottom: 26px; }
+  .job::before {
+    content: ""; position: absolute; left: -35px; top: 24px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--bg);
+  }
+  .job .head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+  .job .title { font-size: 1.12rem; font-weight: 700; }
+  .job .date { color: var(--muted); font-size: 0.92rem; white-space: nowrap; }
+  .job .org { color: var(--accent); font-weight: 600; }
+  .job .project { color: var(--muted); margin: 2px 0 12px; }
+  .job ul { padding-left: 20px; }
+  .job li { margin-bottom: 8px; }
+
+  .edu { display: grid; gap: 12px; }
+  .edu .row {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px;
+    padding-bottom: 12px; border-bottom: 1px dashed var(--border);
+  }
+  .edu .row:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu .date { color: var(--muted); font-size: 0.92rem; }
+
+  footer {
+    text-align: center; color: var(--muted); font-size: 0.9rem;
+    padding: 30px 20px 40px; border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#top">Aditya Tiwari</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="inner">
+    <h1>Aditya Tiwari</h1>
+    <div class="role">Senior Data Engineer / Senior Ab Initio Developer</div>
+    <p class="summary">
+      10 years of experience in the Data Engineering space across Banking, Financial Services and Insurance.
+      Currently working with a banking client on large-scale payment data pipelines.
+    </p>
+    <div class="contact">
+      <a class="btn primary" href="mailto:atiwn050194@gmail.com">Email me</a>
+      <a class="btn ghost" href="tel:+918308988815">+91-8308988815</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="card">
+      <p>
+        I am currently looking for a position as a Senior Data Engineer that enhances my working capacities,
+        professional skills and business efficiencies, and allows me to serve an organization in the best possible
+        way with sheer determination and commitment.
+      </p>
+      <p>
+        I have 10 years of experience in the Data Engineering space, with good knowledge of tools like Ab Initio,
+        databases, data warehousing concepts, AWS, Kafka, web services, Hadoop, Oracle GoldenGate and more.
+      </p>
+      <p>
+        I am currently working with a banking client and have worked on projects like RFT (Risk, Finance and Treasury)
+        and BPAID (Barclays Payment systems and different currency systems such as EUR/SWIFT/GBP/FPS/BACS).
+        I am able to handle technical complexities while implementing business transformation rules and
+        maintaining all data integrity.
+      </p>
+      <p style="margin-top:16px">
+        <strong>Domain:</strong> Banking, Financial Services, Insurance
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>ETL / ELT Tools</h3>
+        <div class="tags"><span class="tag">Ab Initio</span></div>
+      </div>
+      <div class="card">
+        <h3>Cloud Platforms</h3>
+        <div class="tags"><span class="tag">AWS (Certified)</span></div>
+      </div>
+      <div class="card">
+        <h3>Scheduling Tool</h3>
+        <div class="tags"><span class="tag">TWS (Tivoli Workload Scheduler)</span></div>
+      </div>
+      <div class="card">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Unix Shell Scripting</span>
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">ML</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Databases &amp; DWH</h3>
+        <div class="tags">
+          <span class="tag">Teradata</span><span class="tag">Oracle</span>
+          <span class="tag">MongoDB</span><span class="tag">SQL Server</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Big Data &amp; Streaming</h3>
+        <div class="tags">
+          <span class="tag">Kafka</span><span class="tag">Hadoop</span>
+          <span class="tag">Hive</span><span class="tag">HBase</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>External Tools</h3>
+        <div class="tags">
+          <span class="tag">JIRA</span><span class="tag">Confluence</span><span class="tag">Service Now</span>
+          <span class="tag">SSL &amp; SASL configuration (upstream/downstream)</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Core Competencies</h3>
+        <div class="tags">
+          <span class="tag">Data Modeling</span><span class="tag">Data Warehousing</span>
+          <span class="tag">Data Pipelines</span><span class="tag">Data Engineering</span>
+          <span class="tag">Data Analytics</span><span class="tag">Performance Tuning</span>
+          <span class="tag">Regression Testing</span><span class="tag">Data Structures</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Platforms &amp; Specialties</h3>
+        <div class="tags">
+          <span class="tag">Oracle GoldenGate</span><span class="tag">HDFS</span>
+          <span class="tag">Parallelism POCs</span><span class="tag">Metadata Programming</span>
+          <span class="tag">PDL</span><span class="tag">Metadata Hub</span>
+          <span class="tag">Data Lineage</span><span class="tag">Data Associations</span>
+          <span class="tag">Conduct&gt;IT</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Proof of Concepts</h3>
+        <div class="tags">
+          <span class="tag">AWS S3</span><span class="tag">Snowflake</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>Functional</h3>
+      <ul class="plain">
+        <li>Good knowledge of the banking domain; part of all PI Planning meetings for insight behind the technical development.</li>
+        <li>Hands-on expertise in the Software Development Life Cycle.</li>
+        <li>Designing, developing, testing, troubleshooting and debugging ETL applications in projects.</li>
+        <li>Providing post-implementation, application enhancement and maintenance support to clients for software products.</li>
+        <li>Managing and providing technical guidance and support to the project team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="job card">
+        <div class="head">
+          <div class="title">Technical Lead, Data Engineer</div>
+          <div class="date">Sept 2025 – Present</div>
+        </div>
+        <div class="org">Wipro Technologies Limited, India</div>
+        <div class="project">Project: Payment Data Integration &amp; Reconciliation System</div>
+        <ul>
+          <li>Spearheaded a team of 6 data engineers in building end-to-end ETL/ELT pipelines using Kafka.</li>
+          <li>Developed custom Ab Initio components for data cleansing, enrichment and transformation, ensuring end-to-end data lineage and auditability.</li>
+          <li>Built robust ETL workflows for integrating payment data from various sources including SWIFT, CHAPS, SEPA and internal banking systems.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head">
+          <div class="title">Senior Data Engineer</div>
+          <div class="date">Mar 2020 – Sept 2025</div>
+        </div>
+        <div class="org">IBM Pvt Ltd, United Kingdom / India</div>
+        <div class="project">Project: Banking BPAID Cards and Payments</div>
+        <ul>
+          <li>BPAID scope covers card scheme, merchant and acquirer. All payment-related information related to merchants is calculated and analyzed.</li>
+          <li>ETL receives several files for any corporate solution based on its unique service code, and processes them through validations, rejects, transformations and loading of data into databases.</li>
+          <li>ANP (Acquire and Publish), Reconciliation, MFT, data lineage and validation, and partitioning of data for optimized results.</li>
+          <li>Attended meetings with source teams for requirement details; developed and created generic graphs for different requirements.</li>
+          <li>Created plans, generic graphs and psets as part of automation; handled onsite-offshore coordination and trained new resources.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head">
+          <div class="title">Data Engineer</div>
+          <div class="date">Jun 2018 – Mar 2020</div>
+        </div>
+        <div class="org">Capgemini Pvt Ltd, India</div>
+        <div class="project">Project: Banking Risk, Finance and Treasury</div>
+        <ul>
+          <li>Third Party Data Hub is all about external data sources. The stream focused on exploiting the Third Party Data Hub for new use cases, including engagement with product councils to understand demand and ideating new product propositions.</li>
+          <li>Developed and created generic graphs for different requirements, with effective documentation on Confluence pages.</li>
+        </ul>
+      </div>
+
+      <div class="job card">
+        <div class="head">
+          <div class="title">Software Engineer</div>
+          <div class="date">Oct 2015 – Jun 2018</div>
+        </div>
+        <div class="org">ATOS / Syntel Private Limited, India</div>
+        <div class="project">Project: Insurance Policy Information Management</div>
+        <ul>
+          <li>Implemented a single, consolidated view of policy data from across Policy Administration systems (the Policy PIM), covering all policy data across the enterprise: all brands (Allstate, Commercial and Northlight), all channels and all products.</li>
+          <li>Implemented automation utilities for the client and Production Support team using SQL commands, shell scripting and HTML.</li>
+          <li>PIM projects, based on Agile methodology, form an ETL platform to process compensation claims and premiums for US policy holders irrespective of country of residence. The initiative replicates the mainframe EDWETL system with newer technology that is more scalable, manageable and cost effective. Worked in sprints.</li>
+          <li>Worked on incidents and problem tickets for project-related issues, enhancing the existing system with modified approaches.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="card">
+      <ul class="plain">
+        <li>AWS Cloud Practitioner certified</li>
+        <li>AMCAT certified Data Processing Specialist</li>
+        <li>EME Data Protection certified by IBM</li>
+        <li>C and C++ certified</li>
+        <li>Fraud Prevention and Awareness, conducted by IBM, plus multiple organization-level certificates</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card edu">
+      <div class="row">
+        <div><strong>Bachelor of Engineering</strong><br>Oriental College, Bhopal, India (75%)</div>
+        <div class="date">Jul 2011 – May 2015</div>
+      </div>
+      <div class="row">
+        <div><strong>12th CBSE</strong><br>Kendriya Vidyalaya, Bhopal, India (68%)</div>
+        <div class="date">Jun 2010 – May 2011</div>
+      </div>
+      <div class="row">
+        <div><strong>10th CBSE</strong><br>Kendriya Vidyalaya, Bhopal, India (80%)</div>
+        <div class="date">Jun 2008 – May 2009</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p><strong>Email:</strong> <a href="mailto:atiwn050194@gmail.com">atiwn050194@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+918308988815">+91-8308988815</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; <span id="yr">2026</span> Aditya Tiwari
+</footer>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
